@@ -1,0 +1,31 @@
+.active{
+    color: #fff700;
+}
+
+.inactive{
+    color: #000;
+}
+
+.star-rating{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 5rem;
+}
+
+.circle-indicators{
+    display: flex;
+    bottom: 1rem;
+    position: absolute;
+}
+
+.current-indicator{
+    background-color: #fff;
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    margin:0 0.2rem;
+    cursor: pointer;
+}
