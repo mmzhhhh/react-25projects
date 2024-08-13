@@ -13,7 +13,7 @@ export default function LoadMoreData() {
   const [count, setCount] = useState(0);
   // 跟踪按钮在刷新次数达到上限后的禁用状态
   const [disableButton, setDisableButton] = useState(false);
-
+  const [lastScrollPosition,setLastScrollPosition]=useState(0);
   //获取产品
   async function fetchProducts() {
     try {
@@ -37,13 +37,27 @@ export default function LoadMoreData() {
     }
   }
 
+  function addCount(){
+    setLastScrollPosition(window.scrollY);
+    setCount(count + 1);
+  }
+
   useEffect(()=>{
     fetchProducts();
+    if(count>0){
+      setTimeout(()=>{
+        window.scrollTo({
+          top:lastScrollPosition+320,
+          behavior:'smooth',
+        })
+      },500)
+    }
   },[count])
 
   useEffect(()=>{
     if(products&&products.length===100) setDisableButton(true)
   })
+
   if (loading) {
     return <div>Loading data ! Please wait.</div>;
   }
@@ -62,9 +76,7 @@ export default function LoadMoreData() {
       <div className="button-container">
         <button
           disabled={disableButton}
-          onClick={() => {
-            setCount(count + 1);
-          }}
+          onClick={addCount}
         >
           Load More Products
         </button>
