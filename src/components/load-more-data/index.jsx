@@ -13,7 +13,7 @@ export default function LoadMoreData() {
   const [count, setCount] = useState(0);
   // 跟踪按钮在刷新次数达到上限后的禁用状态
   const [disableButton, setDisableButton] = useState(false);
-  const [lastScrollPosition,setLastScrollPosition]=useState(0);
+  const [lastScrollPosition, setLastScrollPosition] = useState(0);
   //获取产品
   async function fetchProducts() {
     try {
@@ -28,7 +28,7 @@ export default function LoadMoreData() {
 
       if (result && result.products && result.products.length) {
         //确保每次加载的新数据不会覆盖旧数据，而是被正确地追加到已有的数据中。
-        setProducts(()=>[...products, ...result.products]);
+        setProducts(() => [...products, ...result.products]);
         setLoading(false);
       }
     } catch (e) {
@@ -37,26 +37,26 @@ export default function LoadMoreData() {
     }
   }
 
-  function addCount(){
+  function addCount() {
     setLastScrollPosition(window.scrollY);
     setCount(count + 1);
   }
 
-  useEffect(()=>{
+  useEffect(() => {
     fetchProducts();
-    if(count>0){
-      setTimeout(()=>{
+    if (count > 0) {
+      setTimeout(() => {
         window.scrollTo({
-          top:lastScrollPosition+320,
-          behavior:'smooth',
-        })
-      },500)
+          top: lastScrollPosition + 320,
+          behavior: "smooth",
+        });
+      }, 500);
     }
-  },[count])
+  }, [count]);
 
-  useEffect(()=>{
-    if(products&&products.length===100) setDisableButton(true)
-  })
+  useEffect(() => {
+    if (products && products.length === 100) setDisableButton(true);
+  });
 
   if (loading) {
     return <div>Loading data ! Please wait.</div>;
@@ -74,13 +74,10 @@ export default function LoadMoreData() {
           : null}
       </div>
       <div className="button-container">
-        <button
-          disabled={disableButton}
-          onClick={addCount}
-        >
+        <button disabled={disableButton} onClick={addCount}>
           Load More Products
         </button>
-        {disableButton?<p>You have reached to 100 products</p>:null}
+        {disableButton ? <p>You have reached to 100 products</p> : null}
       </div>
     </div>
   );
