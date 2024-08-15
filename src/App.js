@@ -9,6 +9,7 @@ import StarRating from "./components/star-rating";
 import TreeView from "./components/tree-view";
 import LightDarkMode from "./components/light-dark-mode";
 import { menus } from "./components/tree-view/data";
+import ScrollIndicator from "./components/scroll-indicator";
 
 
 function App() {
@@ -21,7 +22,8 @@ function App() {
       {/* <LoadMoreData/> */}
       {/* <TreeView menus={menus}/> */}
       {/* <QRCodeGenerator/> */}
-      <LightDarkMode/>
+      {/* <LightDarkMode/> */}
+      <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/>
     </div>
   );
 }
