@@ -1,0 +1,81 @@
+.main{
+    text-align: center;
+}
+.modal{
+    display: flex;
+    position: fixed;
+    z-index: 1;
+    padding-top: 150px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #baf095;
+}
+
+.modal-container{
+    position: relative;
+    background-color: #fefefe;
+    width: 80%;
+    padding: 0;
+    margin: auto;
+    border: 1px solid red;
+    animation-name:animateModal;
+    animation-duration: .5s;
+}
+
+.close-modal-icon{
+    float: right;
+    font-size: 40px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.header{
+    padding: 4px 16px;
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+.body{
+    padding: 2px 16px;
+    height: 200px;
+}
+
+.footer{
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+@keyframes animateModal{
+    from{
+        top: -200px;
+        opacity: 0;
+    }
+
+    to{
+        top: 0;;
+        opacity: 1;
+    }
+}
+
+@keyframes animateModalOut {
+    from {
+        top: 0;
+        opacity: 1;
+    }
+
+    to {
+        top: -200px;
+        opacity: 0;
+    }
+}
+
+/* Apply the exit animation when closing */
+.modal-exit {
+    animation-name: animateModalOut;
+    animation-duration: 0.5s;
+    animation-fill-mode: forwards;
+}
