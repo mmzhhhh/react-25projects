@@ -12,6 +12,7 @@ import { menus } from "./components/tree-view/data";
 import ScrollIndicator from "./components/scroll-indicator";
 import TabTest from "./components/custom-tabs/tab-test";
 import ModalTest from "./components/custom-modal-popup/modal-text";
+import GithubProfileFinder from "./components/github-profile-finder/index";
 
 
 function App() {
@@ -27,7 +28,8 @@ function App() {
       {/* <LightDarkMode/> */}
       {/* <ScrollIndicator url={"https://dummyjson.com/products?limit=100"}/> */}
       {/* <TabTest/> */}
-      <ModalTest/>
+      {/* <ModalTest/> */}
+      <GithubProfileFinder/>
     </div>
   );
 }
