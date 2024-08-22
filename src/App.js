@@ -20,7 +20,8 @@ import FeaturesFlags from "./components/feature-flag/index.jsx";
 import UseFetchHookTest from "./components/use-fetch/test.jsx";
 import UseOnclickOutsideTest from "./components/use-outside-click/test.jsx";
 import UseWindowResizeTest from "./components/use-window-resize-vue/test.jsx";
-
+import ScrollToTopAndBottom
+ from "./components/scroll-to-top-and-bottom/index.jsx";
 
 function App() {
   return (
@@ -44,7 +45,8 @@ function App() {
       </FeatureFlagGlobalState> */}
       {/* <UseFetchHookTest/> */}
       {/* <UseOnclickOutsideTest/> */}
-      <UseWindowResizeTest/>
+      {/* <UseWindowResizeTest/> */}
+      <ScrollToTopAndBottom/>
     </div>
   );
 }
