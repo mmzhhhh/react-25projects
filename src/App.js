@@ -19,6 +19,7 @@ import FeatureFlagGlobalState from "./components/feature-flag/context/index.jsx"
 import FeaturesFlags from "./components/feature-flag/index.jsx";
 import UseFetchHookTest from "./components/use-fetch/test.jsx";
 import UseOnclickOutsideTest from "./components/use-outside-click/test.jsx";
+import UseWindowResizeTest from "./components/use-window-resize-vue/test.jsx";
 
 
 function App() {
@@ -42,7 +43,8 @@ function App() {
         <FeaturesFlags/>
       </FeatureFlagGlobalState> */}
       {/* <UseFetchHookTest/> */}
-      <UseOnclickOutsideTest/>
+      {/* <UseOnclickOutsideTest/> */}
+      <UseWindowResizeTest/>
     </div>
   );
 }
